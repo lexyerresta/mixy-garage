@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Hot Wheels Bone Shaker",
+    "category": "Diecast",
+    "subcategory": "Hot Wheels",
+    "qty": 12,
+    "price": 35000
+  },
+  {
+    "name": "Hot Wheels Twin Mill",
+    "category": "Diecast",
+    "subcategory": "Hot Wheels",
+    "qty": 8,
+    "price": 45000
+  },
+  {
+    "name": "Hot Wheels Deora II",
+    "category": "Diecast",
+    "subcategory": "Hot Wheels",
+    "qty": 5,
+    "price": 125000
+  },
+  {
+    "name": "Charizard ex 223/197 - Ultra Rare",
+    "category": "Pokemon",
+    "subcategory": "Obsidian Flames",
+    "qty": 2,
+    "price": 850000
+  },
+  {
+    "name": "Pikachu with Grey Felt Hat",
+    "category": "Pokemon",
+    "subcategory": "Promo",
+    "qty": 1,
+    "price": 2500000
+  },
+  {
+    "name": "Mew ex - Special Illustration Rare",
+    "category": "Pokemon",
+    "subcategory": "Paldean Fates",
+    "qty": 3,
+    "price": 1200000
+  },
+  {
+    "name": "Matchbox 1970 Plymouth Cuda",
+    "category": "Diecast",
+    "subcategory": "Matchbox",
+    "qty": 15,
+    "price": 25000
+  },
+  {
+    "name": "Pokemon TCG Booster Box - Crimson Haze",
+    "category": "Pokemon",
+    "subcategory": "Sealed",
+    "qty": 10,
+    "price": 950000
+  }
+]
