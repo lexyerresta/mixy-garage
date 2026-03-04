@@ -554,7 +554,7 @@ const MainContent = () => {
         )}
       </AnimatePresence>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16 pt-24 sm:pt-32">
         <AnimatePresence mode="wait">
           {view === "grading" ? (
             <motion.div
@@ -578,7 +578,7 @@ const MainContent = () => {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="relative h-[350px] sm:h-[500px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden group shadow-2xl"
+                className="relative h-[220px] sm:h-[400px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden group shadow-2xl"
               >
                 <div className="absolute inset-0 bg-vault-charcoal">
                   <div className="absolute inset-0 opacity-40 mix-blend-overlay">

@@ -54,17 +54,16 @@ The featured item rotates every 3 seconds. Hover to pause and tilt the card in 3
 
 ---
 
-### Mobile — Hero & Navigation
-The header adapts to smaller screens. Navigation collapses to icon buttons, search stays accessible.
+### Mobile Views
+The header collapses to icon buttons on mobile. Cards stack into a clean 2-column grid with condition badges and optimized font sizes.
 
-<img src="public/docs/screenshot_mobile.png" alt="Mobile view" width="400"/>
+<div align="center">
 
----
+| Navigation & Showcase | Product Grid |
+|---|---|
+| <img src="public/docs/screenshot_mobile_grid.png" alt="Mobile showcase" width="350"/> | <img src="public/docs/screenshot_mobile_grid.png" alt="Mobile grid" width="350"/> |
 
-### Mobile — Product Grid
-Cards are displayed 2-per-row with condition badges, reduced text sizing, and optimized padding.
-
-<img src="public/docs/screenshot_mobile_grid.png" alt="Mobile inventory grid" width="400"/>
+</div>
 
 ---
 

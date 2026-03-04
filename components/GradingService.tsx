@@ -125,12 +125,12 @@ export const GradingService = () => {
 
                         <div className="flex flex-wrap gap-4">
                             {[
-                                { label: "Authorized Dealer", icon: <Award /> },
-                                { label: "Insured Shipping", icon: <Globe /> },
-                                { label: "Expert Handling", icon: <Search /> }
+                                { label: "Authorized Dealer", icon: <Award size={14} className="text-vault-accent" /> },
+                                { label: "Insured Shipping", icon: <Globe size={14} className="text-vault-accent" /> },
+                                { label: "Expert Handling", icon: <Search size={14} className="text-vault-accent" /> }
                             ].map((item, i) => (
                                 <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-[10px] font-black uppercase text-slate-300">
-                                    {React.cloneElement(item.icon as React.ReactElement, { size: 14, className: "text-vault-accent" })}
+                                    {item.icon}
                                     {item.label}
                                 </div>
                             ))}
@@ -180,8 +180,8 @@ export const GradingService = () => {
                                 key={tab}
                                 onClick={() => setActiveTab(tab as any)}
                                 className={`px-10 py-3 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all ${activeTab === tab
-                                        ? "bg-vault-accent text-white shadow-xl"
-                                        : "text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                                    ? "bg-vault-accent text-white shadow-xl"
+                                    : "text-slate-400 hover:text-slate-900 dark:hover:text-white"
                                     }`}
                             >
                                 {tab} Service
@@ -229,8 +229,8 @@ export const GradingService = () => {
                         <div
                             key={i}
                             className={`rounded-3xl border-2 transition-all overflow-hidden ${openFaq === i
-                                    ? "border-vault-accent bg-vault-accent/[0.02]"
-                                    : "border-slate-100 dark:border-white/5 hover:border-slate-200 dark:hover:border-white/10"
+                                ? "border-vault-accent bg-vault-accent/[0.02]"
+                                : "border-slate-100 dark:border-white/5 hover:border-slate-200 dark:hover:border-white/10"
                                 }`}
                         >
                             <button
