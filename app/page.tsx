@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useEffect, useState, useMemo, Suspense } from "react"
+import React, { useEffect, useState, useMemo, Suspense, useRef } from "react"
 import { Input } from "@/components/ui/input"
-import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from "framer-motion"
+import { motion, AnimatePresence, useMotionValue, useTransform, useSpring, animate } from "framer-motion"
 import {
   Search,
   ShoppingBag,
@@ -95,29 +95,25 @@ const energyTypes = [
 
 const ThreeDCardShowcase = ({ featuredCards }: { featuredCards: Product[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isFlipping, setIsFlipping] = useState(false)
   const [displayCard, setDisplayCard] = useState(featuredCards[0])
-  const [baseRotation, setBaseRotation] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
+  const isHoveringRef = useRef(false)
+  const currentIndexRef = useRef(0)
 
   // Mouse tilt values
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
-
-  // Spring animations for smooth tilt
   const springX = useSpring(mouseX, { stiffness: 150, damping: 20 })
   const springY = useSpring(mouseY, { stiffness: 150, damping: 20 })
-
-  // Transform values to rotation
   const rotateX = useTransform(springY, [-0.5, 0.5], [15, -15])
   const rotateY = useTransform(springX, [-0.5, 0.5], [-15, 15])
-
-  // Holo mapping
   const holoX = useTransform(springX, [-0.5, 0.5], ["0%", "100%"])
   const holoY = useTransform(springY, [-0.5, 0.5], ["0%", "100%"])
 
+  // Card rotation angle - drives the continuous spin
+  const cardRotation = useMotionValue(0)
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (isFlipping) return
     const rect = e.currentTarget.getBoundingClientRect()
     const x = (e.clientX - rect.left) / rect.width - 0.5
     const y = (e.clientY - rect.top) / rect.height - 0.5
@@ -127,29 +123,85 @@ const ThreeDCardShowcase = ({ featuredCards }: { featuredCards: Product[] }) => 
 
   const handleMouseLeave = () => {
     setIsHovering(false)
+    isHoveringRef.current = false
     mouseX.set(0)
     mouseY.set(0)
   }
 
+  const handleMouseEnter = () => {
+    setIsHovering(true)
+    isHoveringRef.current = true
+  }
+
+  // Core spin loop
   useEffect(() => {
-    if (featuredCards.length <= 1 || isHovering) return
+    if (featuredCards.length <= 1) return
 
-    const interval = setInterval(() => {
-      setIsFlipping(true)
-      mouseX.set(0)
-      mouseY.set(0)
+    let stopped = false
 
-      const nextIndex = (currentIndex + 1) % featuredCards.length
-      setCurrentIndex(nextIndex)
-      setDisplayCard(featuredCards[nextIndex])
+    const PAUSE_ON_FRONT_MS = 3000  // how long each card is shown
+    const FLIP_HALF_MS = 500        // duration of each half-flip (front→back, back→front)
 
-      setTimeout(() => {
-        setIsFlipping(false)
-      }, 800)
-    }, 3000)
+    const waitIfHovering = () => new Promise<void>(res => {
+      if (!isHoveringRef.current) { res(); return }
+      const check = () => {
+        if (!isHoveringRef.current || stopped) { res(); return }
+        requestAnimationFrame(check)
+      }
+      requestAnimationFrame(check)
+    })
 
-    return () => clearInterval(interval)
-  }, [currentIndex, featuredCards, isHovering])
+    const spinLoop = async () => {
+      while (!stopped) {
+        // 1. PAUSE — show current card front, but bail out if hovering
+        await waitIfHovering()
+        if (stopped) break
+
+        // Wait the display time, but abort early if hovering starts
+        const waitFront = (): Promise<void> => new Promise(res => {
+          let elapsed = 0
+          const start = Date.now()
+          const tick = () => {
+            if (stopped) { res(); return }
+            if (isHoveringRef.current) { res(); return } // cut short on hover
+            elapsed = Date.now() - start
+            if (elapsed >= PAUSE_ON_FRONT_MS) { res(); return }
+            requestAnimationFrame(tick)
+          }
+          requestAnimationFrame(tick)
+        })
+        await waitFront()
+        if (stopped) break
+
+        // If hover happened during pause, go back to waiting
+        if (isHoveringRef.current) { await waitIfHovering(); if (stopped) break }
+
+        // 2. FLIP FIRST HALF — front → back (quarter-turn ease-in)
+        const cur = cardRotation.get()
+        await animate(cardRotation, cur + 180, {
+          duration: FLIP_HALF_MS / 1000,
+          ease: "easeIn"
+        })
+        if (stopped) break
+
+        // 3. SWAP CARD — now back is visible, swap to next card immediately
+        const nextIndex = (currentIndexRef.current + 1) % featuredCards.length
+        currentIndexRef.current = nextIndex
+        setCurrentIndex(nextIndex)
+        setDisplayCard(featuredCards[nextIndex])
+
+        // 4. FLIP SECOND HALF — back → front of new card (ease-out)
+        await animate(cardRotation, cur + 360, {
+          duration: FLIP_HALF_MS / 1000,
+          ease: "easeOut"
+        })
+        // Loop back → PAUSE again on new card
+      }
+    }
+
+    spinLoop()
+    return () => { stopped = true }
+  }, [featuredCards])
 
   if (!displayCard) return null
 
@@ -167,7 +219,7 @@ const ThreeDCardShowcase = ({ featuredCards }: { featuredCards: Product[] }) => 
             <span className="w-12 h-1 bg-vault-accent/30 rounded-full" />
             <span className="px-3 py-1 bg-vault-accent/10 border border-vault-accent/20 text-vault-accent text-[9px] font-black uppercase tracking-widest rounded">ELITE VAULT ITEM</span>
           </div>
-          <h2 className="text-3xl sm:text-7xl font-black italic text-slate-900 dark:text-white uppercase tracking-tighter leading-[0.85]">
+          <h2 className="text-2xl sm:text-5xl font-black italic text-slate-900 dark:text-white uppercase tracking-tighter leading-[0.9] line-clamp-2">
             {displayCard.name}
           </h2>
           <p className="text-[10px] font-black text-slate-400 dark:text-vault-accent uppercase tracking-[0.6em]">Currently High-Value Artifact Inspection</p>
@@ -181,59 +233,64 @@ const ThreeDCardShowcase = ({ featuredCards }: { featuredCards: Product[] }) => 
 
       <div
         className="relative w-56 h-[340px] sm:w-80 sm:h-[450px] order-1 lg:order-2 shrink-0 cursor-pointer"
-        style={{ perspective: "2000px" }}
-        onMouseEnter={() => setIsHovering(true)}
+        style={{ perspective: "1200px" }}
+        onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        <AnimatePresence mode="wait">
+        {/* Outer: continuous spin */}
+        <motion.div
+          style={{
+            rotateY: cardRotation,
+            transformStyle: "preserve-3d",
+            width: "100%",
+            height: "100%",
+            position: "relative"
+          }}
+        >
+          {/* Inner: mouse tilt (only on front face angle) */}
           <motion.div
-            key={displayCard.name}
-            initial={{ rotateY: 90, scale: 0.8, opacity: 0 }}
-            animate={{ rotateY: 0, scale: 1, opacity: 1 }}
-            exit={{ rotateY: -90, scale: 0.8, opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            style={{ transformStyle: "preserve-3d", width: "100%", height: "100%" }}
-            className="absolute inset-0"
+            style={{
+              rotateX: isHovering ? rotateX : 0,
+              rotateY: isHovering ? rotateY : 0,
+              transformStyle: "preserve-3d",
+              width: "100%",
+              height: "100%"
+            }}
           >
-            <motion.div
-              style={{
-                transformStyle: "preserve-3d",
-                width: "100%",
-                height: "100%",
-                rotateX,
-                rotateY
-              }}
-              className="relative w-full h-full"
+            {/* Front face */}
+            <div
+              className="absolute inset-0 rounded-[1.5rem] overflow-hidden border border-slate-200/30 dark:border-white/5 shadow-2xl vault-holo bg-white dark:bg-black flex items-center justify-center"
+              style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" } as React.CSSProperties}
             >
-              <div className="w-full h-full rounded-[1.5rem] overflow-hidden border-4 border-white/5 shadow-2xl vault-holo bg-black flex items-center justify-center relative">
-                <ItemImage itemName={displayCard.name} className="w-full h-full object-cover" />
+              <ItemImage itemName={displayCard.name} className="w-full h-full object-cover" />
+              <motion.div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: "linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.4) 45%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.4) 55%, transparent 60%)",
+                  backgroundSize: "200% 200%",
+                  mixBlendMode: "overlay",
+                  backgroundPositionX: holoX,
+                  backgroundPositionY: holoY,
+                  opacity: holoIntensity
+                }}
+              />
+            </div>
 
-                {/* Rarity Holo Shimmer */}
-                <motion.div
-                  animate={isFlipping ? {
-                    backgroundPosition: ["0% 0%", "200% 200%"],
-                    opacity: [holoIntensity * 0.5, holoIntensity, holoIntensity * 0.5]
-                  } : {}}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background: "linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.4) 45%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.4) 55%, transparent 60%)",
-                    backgroundSize: "200% 200%",
-                    mixBlendMode: "overlay",
-                    backgroundPositionX: isFlipping ? undefined : holoX,
-                    backgroundPositionY: isFlipping ? undefined : holoY,
-                    opacity: isFlipping ? undefined : holoIntensity
-                  }}
-                />
-              </div>
-            </motion.div>
+            {/* Back face — visible at 180° */}
+            <div
+              className="absolute inset-0 rounded-[1.5rem] overflow-hidden border border-slate-200/30 dark:border-white/5 shadow-2xl bg-[#1a2b4b]"
+              style={{
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+                transform: "rotateY(180deg)"
+              } as React.CSSProperties}
+            >
+              <img src="/items/card_back.png" alt="Card Back" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-vault-accent/10 mix-blend-overlay" />
+            </div>
           </motion.div>
-        </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   )
