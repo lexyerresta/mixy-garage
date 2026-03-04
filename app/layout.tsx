@@ -14,12 +14,12 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Mixy Garage - Diecast & TCG Collectibles",
-  description: "Premium collectibles marketplace for Diecast items and Pokemon TCG. Authentic, graded, and rare pieces for collectors.",
+  title: "Mixy Garage - Premium TCG & Collectibles Vault",
+  description: "The ultimate destination for authentic, graded, and rare Pokemon & One Piece TCG. Secure your collection with Mixy Garage.",
   icons: {
-    icon: "/logo-mixy.jpg",
-    shortcut: "/logo-mixy.jpg",
-    apple: "/logo-mixy.jpg",
+    icon: "/logo-mixy.png",
+    shortcut: "/logo-mixy.png",
+    apple: "/logo-mixy.png",
   },
 }
 

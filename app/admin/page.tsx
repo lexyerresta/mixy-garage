@@ -22,6 +22,7 @@ type PriceItem = {
     subcategory: string | null;
     qty: number;
     price: number;
+    condition?: string;
 };
 
 export default function AdminDashboard() {
@@ -153,15 +154,9 @@ export default function AdminDashboard() {
             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between mb-8">
                 <div>
                     <h1 className="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">Mixy <span className="text-orange-500">Garage</span> Admin</h1>
-                    <p className="text-slate-500 dark:text-slate-400 font-bold uppercase text-[10px] tracking-widest mt-1">Inventory Management System</p>
+                    <p className="text-slate-500 dark:text-slate-400 font-bold uppercase text-[10px] tracking-widest mt-1">Premium Inventory Management</p>
                 </div>
-                <button
-                    onClick={handleLogout}
-                    className="flex items-center gap-2 px-6 py-3 bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-500 hover:bg-red-100 dark:hover:bg-red-500/20 active:scale-95 rounded-2xl text-sm font-black transition-all shadow-sm"
-                >
-                    <LogOut className="w-4 h-4" />
-                    LOGOUT
-                </button>
+                <div className="flex-1" />
             </div>
 
             <div className="sticky top-4 z-40 bg-white/80 dark:bg-[#151e32]/80 backdrop-blur-xl border border-slate-200 dark:border-white/10 p-6 rounded-3xl shadow-xl flex flex-col md:flex-row gap-4 items-center">
@@ -197,7 +192,7 @@ export default function AdminDashboard() {
             {loading ? (
                 <div className="flex flex-col items-center justify-center py-40">
                     <RefreshCw className="w-12 h-12 animate-spin text-orange-500 mb-6 opacity-80" />
-                    <span className="text-slate-400 font-black uppercase tracking-widest text-sm">Synchronizing Database...</span>
+                    <span className="text-slate-400 font-black uppercase tracking-widest text-sm">Syncing Vault Database...</span>
                 </div>
             ) : filteredItems.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-40 bg-white dark:bg-[#151e32] border border-slate-200 dark:border-white/10 rounded-3xl h-64 shadow-inner">
@@ -253,20 +248,22 @@ export default function AdminDashboard() {
                                         onChange={(e) => handleUpdateItem(idx, "category", e.target.value)}
                                         className="w-full appearance-none bg-slate-50 dark:bg-[#0B1120] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-2.5 font-bold text-xs text-slate-700 dark:text-slate-300 outline-none focus:ring-2 focus:ring-orange-500"
                                     >
-                                        <option value="Diecast">Diecast</option>
                                         <option value="Pokemon">Pokemon</option>
-                                        {uniqueCategories.filter(c => c !== "Diecast" && c !== "Pokemon").map(c => <option key={c} value={c}>{c}</option>)}
+                                        <option value="One Piece">One Piece</option>
+                                        {uniqueCategories.filter(c => c !== "Diecast" && c !== "Pokemon" && c !== "One Piece").map(c => <option key={c} value={c}>{c}</option>)}
                                     </select>
                                 </div>
-                                <div className="space-y-1.5">
-                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block ml-1">SUBCATEGORY</label>
-                                    <input
-                                        type="text"
-                                        value={item.subcategory || ""}
-                                        onChange={(e) => handleUpdateItem(idx, "subcategory", e.target.value)}
-                                        className="w-full bg-slate-50 dark:bg-[#0B1120] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-2.5 font-bold text-xs text-slate-700 dark:text-slate-300 outline-none focus:ring-2 focus:ring-orange-500"
-                                        placeholder="No subcategory"
-                                    />
+                                <div className="space-y-1.5 col-span-2 sm:col-span-1">
+                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block ml-1">CONDITION / GRADING</label>
+                                    <div className="relative group">
+                                        <input
+                                            type="text"
+                                            value={item.condition || ""}
+                                            onChange={(e) => handleUpdateItem(idx, "condition", e.target.value)}
+                                            className="w-full bg-slate-50 dark:bg-[#0B1120] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-2.5 font-bold text-xs text-slate-700 dark:text-slate-300 outline-none focus:ring-2 focus:ring-orange-500"
+                                            placeholder="e.g. PSA 10, CGC, TAG, EGS, ZGS"
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>

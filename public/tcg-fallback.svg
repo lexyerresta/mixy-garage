@@ -1,0 +1,36 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#161618;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A0A0B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F9E076;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C5A028;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Card Base -->
+  <rect width="400" height="600" rx="40" fill="url(#grad1)"/>
+  
+  <!-- Outer Border -->
+  <rect x="15" y="15" width="370" height="570" rx="35" fill="none" stroke="url(#goldGrad)" stroke-width="4" opacity="0.8"/>
+  
+  <!-- Patterned Background -->
+  <path d="M0 0 L400 600 M400 0 L0 600" stroke="#FFFFFF" stroke-width="1" opacity="0.05"/>
+  <circle cx="200" cy="300" r="120" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.2"/>
+  
+  <!-- Center Emblem -->
+  <circle cx="200" cy="280" r="70" fill="#0A0A0B" stroke="url(#goldGrad)" stroke-width="2"/>
+  <path d="M180 260 L200 230 L220 260 L200 290 Z" fill="#FF0055" />
+  <path d="M180 300 L200 270 L220 300 L230 310 L200 330 L170 310 Z" fill="#00F5FF" opacity="0.8" />
+  
+  <!-- Brand Text -->
+  <text x="50%" y="450" text-anchor="middle" fill="url(#goldGrad)" font-family="Outfit, sans-serif" font-weight="900" font-size="32" letter-spacing="6" style="text-transform: uppercase; font-style: italic;">MIXY GARAGE</text>
+  <text x="50%" y="485" text-anchor="middle" fill="#444" font-family="Inter, sans-serif" font-weight="bold" font-size="10" letter-spacing="4">PREMIUM COLLECTOR VAULT</text>
+  
+  <!-- Holographic Glint -->
+  <path d="M50 50 L150 50 L50 150 Z" fill="white" opacity="0.05"/>
+  <path d="M350 550 L250 550 L350 450 Z" fill="white" opacity="0.05"/>
+</svg>

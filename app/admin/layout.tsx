@@ -12,8 +12,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
                             <Image src="/logo-mixy.png" alt="Logo" fill className="rounded-full object-cover" />
                         </div>
                         <div className="flex flex-col">
-                            <h1 className="font-black text-sm tracking-tight leading-tight uppercase">Mixy <span className="text-orange-500">Garage</span> Admin</h1>
-                            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider flex items-center gap-1"><ShieldCheck className="w-3 h-3 text-orange-500" /> Secured System</span>
+                            <h1 className="font-black text-sm tracking-tight leading-tight uppercase text-slate-900 dark:text-white">Mixy <span className="text-orange-500">Garage</span> Admin</h1>
                         </div>
                     </div>
                 </div>

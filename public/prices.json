@@ -1,58 +1,562 @@
 [
   {
-    "name": "Hot Wheels Bone Shaker",
-    "category": "Diecast",
-    "subcategory": "Hot Wheels",
-    "qty": 12,
-    "price": 35000
-  },
-  {
-    "name": "Hot Wheels Twin Mill",
-    "category": "Diecast",
-    "subcategory": "Hot Wheels",
-    "qty": 8,
-    "price": 45000
-  },
-  {
-    "name": "Hot Wheels Deora II",
-    "category": "Diecast",
-    "subcategory": "Hot Wheels",
-    "qty": 5,
-    "price": 125000
-  },
-  {
-    "name": "Charizard ex 223/197 - Ultra Rare",
+    "name": "Mega Charizard X ex - Special Illustration Rare (Inferno X)",
     "category": "Pokemon",
-    "subcategory": "Obsidian Flames",
+    "subcategory": "PSA 10",
+    "qty": 1,
+    "price": 12500000,
+    "condition": "PSA 10"
+  },
+  {
+    "name": "Umbreon ex - Special Illustration Rare (Prismatic)",
+    "category": "Pokemon",
+    "subcategory": "PSA 10",
+    "qty": 1,
+    "price": 18500000,
+    "condition": "PSA 10"
+  },
+  {
+    "name": "Mega Gengar ex - Special Illustration Rare (Megadream)",
+    "category": "Pokemon",
+    "subcategory": "PSA 10",
+    "qty": 1,
+    "price": 8500000,
+    "condition": "PSA 10"
+  },
+  {
+    "name": "Pikachu ex - Special Art Rare (Megadream)",
+    "category": "Pokemon",
+    "subcategory": "PSA 10",
     "qty": 2,
-    "price": 850000
+    "price": 5500000,
+    "condition": "PSA 10"
+  },
+  {
+    "name": "Mewtwo ex - Team Rocket AR (Megadream)",
+    "category": "Pokemon",
+    "subcategory": "Fresh Pull",
+    "qty": 3,
+    "price": 2200000,
+    "condition": "Fresh Pull"
+  },
+  {
+    "name": "Sylveon ex - Special Illustration Rare (Prismatic)",
+    "category": "Pokemon",
+    "subcategory": "CGC 10 Pristine",
+    "qty": 1,
+    "price": 5200000,
+    "condition": "CGC 10 Pristine"
+  },
+  {
+    "name": "Leafeon ex - Special Illustration Rare (Prismatic)",
+    "category": "Pokemon",
+    "subcategory": "PSA 10",
+    "qty": 1,
+    "price": 4800000,
+    "condition": "PSA 10"
   },
   {
     "name": "Pikachu with Grey Felt Hat",
     "category": "Pokemon",
-    "subcategory": "Promo",
+    "subcategory": "PSA 10",
     "qty": 1,
-    "price": 2500000
+    "price": 3500000,
+    "condition": "PSA 10"
   },
   {
     "name": "Mew ex - Special Illustration Rare",
     "category": "Pokemon",
-    "subcategory": "Paldean Fates",
+    "subcategory": "Fresh Pull",
     "qty": 3,
-    "price": 1200000
+    "price": 1800000,
+    "condition": "Fresh Pull"
   },
   {
-    "name": "Matchbox 1970 Plymouth Cuda",
-    "category": "Diecast",
-    "subcategory": "Matchbox",
-    "qty": 15,
-    "price": 25000
-  },
-  {
-    "name": "Pokemon TCG Booster Box - Crimson Haze",
+    "name": "Umbreon VMAX - Alternate Art",
     "category": "Pokemon",
-    "subcategory": "Sealed",
-    "qty": 10,
-    "price": 950000
+    "subcategory": "PSA 10",
+    "qty": 1,
+    "price": 28000000,
+    "condition": "PSA 10"
+  },
+  {
+    "name": "Rayquaza VMAX - Alternate Art",
+    "category": "Pokemon",
+    "subcategory": "PSA 10",
+    "qty": 1,
+    "price": 14500000,
+    "condition": "PSA 10"
+  },
+  {
+    "name": "Gengar VMAX - Alternate Art",
+    "category": "Pokemon",
+    "subcategory": "BGS 10 Black Label",
+    "qty": 1,
+    "price": 45000000,
+    "condition": "BGS 10 Black Label"
+  },
+  {
+    "name": "Arceus VSTAR - Gold Parallel",
+    "category": "Pokemon",
+    "subcategory": "EGS 10",
+    "qty": 1,
+    "price": 6500000,
+    "condition": "EGS 10"
+  },
+  {
+    "name": "Lugia V - Alternate Art",
+    "category": "Pokemon",
+    "subcategory": "ZGS 9.5",
+    "qty": 1,
+    "price": 5800000,
+    "condition": "ZGS 9.5"
+  },
+  {
+    "name": "Giratina V - Alternate Art",
+    "category": "Pokemon",
+    "subcategory": "CGC 10 Pristine",
+    "qty": 1,
+    "price": 16500000,
+    "condition": "CGC 10 Pristine"
+  },
+  {
+    "name": "Pikachu VMAX - Rainbow Rare",
+    "category": "Pokemon",
+    "subcategory": "PSA 9",
+    "qty": 2,
+    "price": 4200000,
+    "condition": "PSA 9"
+  },
+  {
+    "name": "Latios & Latias GX - Alternate Art",
+    "category": "Pokemon",
+    "subcategory": "PSA 10",
+    "qty": 1,
+    "price": 22000000,
+    "condition": "PSA 10"
+  },
+  {
+    "name": "Greninja ex - Special Illustration Rare",
+    "category": "Pokemon",
+    "subcategory": "PSA 10",
+    "qty": 1,
+    "price": 7500000,
+    "condition": "PSA 10"
+  },
+  {
+    "name": "Origin Forme Palkia VSTAR - Universe AR",
+    "category": "Pokemon",
+    "subcategory": "PSA 10",
+    "qty": 1,
+    "price": 1800000,
+    "condition": "PSA 10"
+  },
+  {
+    "name": "Origin Forme Dialga VSTAR - Universe AR",
+    "category": "Pokemon",
+    "subcategory": "PSA 10",
+    "qty": 1,
+    "price": 1850000,
+    "condition": "PSA 10"
+  },
+  {
+    "name": "Bulbasaur - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Ivysaur - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Venusaur ex - Double Rare",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 200000,
+    "qty": 4,
+    "condition": "NM-M"
+  },
+  {
+    "name": "Charmander - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 2,
+    "condition": ""
+  },
+  {
+    "name": "Charmeleon - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 5,
+    "condition": ""
+  },
+  {
+    "name": "Charizard ex - Double Rare",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 200000,
+    "qty": 5,
+    "condition": "NM-M"
+  },
+  {
+    "name": "Squirtle - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 2,
+    "condition": ""
+  },
+  {
+    "name": "Wartortle - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 1,
+    "condition": ""
+  },
+  {
+    "name": "Blastoise ex - Double Rare",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 200000,
+    "qty": 1,
+    "condition": "NM-M"
+  },
+  {
+    "name": "Caterpie - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 1,
+    "condition": ""
+  },
+  {
+    "name": "Metapod - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 5,
+    "condition": ""
+  },
+  {
+    "name": "Butterfree - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Weedle - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 2,
+    "condition": ""
+  },
+  {
+    "name": "Kakuna - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 2,
+    "condition": ""
+  },
+  {
+    "name": "Beedrill - Rare",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 150000,
+    "qty": 3,
+    "condition": "NM-M"
+  },
+  {
+    "name": "Pidgey - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 5,
+    "condition": ""
+  },
+  {
+    "name": "Pidgeotto - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 2,
+    "condition": ""
+  },
+  {
+    "name": "Pidgeot - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 5,
+    "condition": ""
+  },
+  {
+    "name": "Rattata - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 4,
+    "condition": ""
+  },
+  {
+    "name": "Raticate - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Spearow - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 2,
+    "condition": ""
+  },
+  {
+    "name": "Fearow - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 4,
+    "condition": ""
+  },
+  {
+    "name": "Ekans - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 5,
+    "condition": ""
+  },
+  {
+    "name": "Arbok ex - Double Rare",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 200000,
+    "qty": 2,
+    "condition": "NM-M"
+  },
+  {
+    "name": "Pikachu - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 4,
+    "condition": ""
+  },
+  {
+    "name": "Raichu - Rare",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 150000,
+    "qty": 4,
+    "condition": "NM-M"
+  },
+  {
+    "name": "Sandshrew - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 5,
+    "condition": ""
+  },
+  {
+    "name": "Sandslash - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 4,
+    "condition": ""
+  },
+  {
+    "name": "Nidoran ♀ - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 4,
+    "condition": ""
+  },
+  {
+    "name": "Nidorina - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Nidoqueen - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Nidoran ♂ - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Nidorino - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 1,
+    "condition": ""
+  },
+  {
+    "name": "Nidoking - Rare",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 150000,
+    "qty": 4,
+    "condition": "NM-M"
+  },
+  {
+    "name": "Clefairy - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 4,
+    "condition": ""
+  },
+  {
+    "name": "Clefable - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 5,
+    "condition": ""
+  },
+  {
+    "name": "Vulpix - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Ninetales ex - Double Rare",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 200000,
+    "qty": 2,
+    "condition": "NM-M"
+  },
+  {
+    "name": "Jigglypuff - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Wigglytuff ex - Double Rare",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 200000,
+    "qty": 3,
+    "condition": "NM-M"
+  },
+  {
+    "name": "Zubat - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Golbat - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Oddish - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 2,
+    "condition": ""
+  },
+  {
+    "name": "Gloom - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 5,
+    "condition": ""
+  },
+  {
+    "name": "Vileplume - Rare",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 150000,
+    "qty": 3,
+    "condition": "NM-M"
+  },
+  {
+    "name": "Paras - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Parasect - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 5,
+    "condition": ""
+  },
+  {
+    "name": "Venonat - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 3,
+    "condition": ""
+  },
+  {
+    "name": "Venomoth - Uncommon",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 2,
+    "condition": ""
+  },
+  {
+    "name": "Diglett - Common",
+    "category": "Pokemon",
+    "subcategory": "Scarlet & Violet 151",
+    "price": 50000,
+    "qty": 4,
+    "condition": ""
   }
 ]
